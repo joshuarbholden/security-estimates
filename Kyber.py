@@ -13,7 +13,8 @@ class KyberParameterSet:
         self.ke = ke    # binary distribution for the ciphertext errors
         self.ke_ct = ke_ct    # binary distribution for the ciphertext errors
         self.q = q
-        self.rqk = rqk  # 2^(bits in the public key)  ###JBH ??????
+        self.rqk = rqk  # 2^(bits in the public key)  
+                        ###JBH ?????? must be per element of Zq
         self.rqc = rqc  # 2^(bits in the first ciphertext)
         self.rq2 = rq2  # 2^(bits in the second ciphertext)
 
@@ -54,7 +55,7 @@ if __name__ == "__main__":
     ps_light = KyberParameterSet(256, 2, 3, 3, 3329, 2**12, 2**10, 2**4, ke_ct=2)
     ps_recommended = KyberParameterSet(256, 3, 2, 2, 3329, 2**12, 2**10, 2**4)
     ps_paranoid = KyberParameterSet(256, 4, 2, 2, 3329, 2**12, 2**11, 2**5)
-    ps_alkaline = KyberParameterSet(4, 2, 2, 2, 41,123 , 43, 22)
+    ps_alkaline = KyberParameterSet(4, 2, 2, 2, 41, 41 , 41, 41)
 
     # Analyses
 #    print ("Kyber512 (light):")
