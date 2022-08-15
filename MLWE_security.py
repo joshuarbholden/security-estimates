@@ -47,9 +47,11 @@ def MLWE_optimize_attack(q, n, max_m, s, cost_attack=LWE_primal_cost, cost_svp=s
     """ Find optimal parameters for a given attack
     """
     best_cost = log_infinity
-    best_b = None
+    # best_b = None
     b_min, b_max = 50, n+max_m
     b_step = max(1, (b_max - b_min)//4)
+    best_b = b_min #JBH:  I think this is "best"?  at least it's the starting point
+    best_m = max_m #added JBH for edge cases
     while b_step > 0:
         for b in range(b_min, b_max+1, b_step):
             if cost_svp(b) > best_cost:

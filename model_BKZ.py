@@ -133,5 +133,5 @@ def BKZ_last_block_length(q, nq, n1, b):
     """
 
     (_, _, L) = construct_BKZ_shape(q, nq, n1, b)
-    return exp(L[nq + n1 - b])
+    return exp(L[max(nq + n1 - b,0)])  # max added JBH to cover edge cases (correct??)
 

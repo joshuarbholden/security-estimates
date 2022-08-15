@@ -13,7 +13,7 @@ class KyberParameterSet:
         self.ke = ke    # binary distribution for the ciphertext errors
         self.ke_ct = ke_ct    # binary distribution for the ciphertext errors
         self.q = q
-        self.rqk = rqk  # 2^(bits in the public key)
+        self.rqk = rqk  # 2^(bits in the public key)  ###JBH ??????
         self.rqc = rqc  # 2^(bits in the first ciphertext)
         self.rq2 = rq2  # 2^(bits in the second ciphertext)
 
@@ -46,7 +46,7 @@ def summarize(ps):
     print ("params: ", ps.__dict__)
     print ("com costs: ", communication_costs(ps))
     F, f = p2_cyclotomic_error_probability(ps)
-    print ("failure: %.1f = 2^%.1f"%(f, log(f + 2.**(-300))/log(2)))
+    print ("failure: %.2f = 2^%.1f"%(f, log(f + 2.**(-300))/log(2))) # a little more precision
 
 
 if __name__ == "__main__":
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     ps_light = KyberParameterSet(256, 2, 3, 3, 3329, 2**12, 2**10, 2**4, ke_ct=2)
     ps_recommended = KyberParameterSet(256, 3, 2, 2, 3329, 2**12, 2**10, 2**4)
     ps_paranoid = KyberParameterSet(256, 4, 2, 2, 3329, 2**12, 2**11, 2**5)
-    ps_alkaline = KyberParameterSet(256, 4, 2, 2, 3329, 2**12, 2**11, 2**5)
+    ps_alkaline = KyberParameterSet(4, 2, 2, 2, 41,123 , 43, 22)
 
     # Analyses
 #    print ("Kyber512 (light):")
@@ -64,12 +64,12 @@ if __name__ == "__main__":
     # summarize(ps_light)
     # print ()
 
-    print ("Kyber768 (recommended):")
-    print ("--------------------")
-    print ("security:")
-    MLWE_summarize_attacks(Kyber_to_MLWE(ps_recommended))
-    summarize(ps_recommended)
-    print ()
+    # print ("Kyber768 (recommended):")
+    # print ("--------------------")
+    # print ("security:")
+    # MLWE_summarize_attacks(Kyber_to_MLWE(ps_recommended))
+    # summarize(ps_recommended)
+    # print ()
 
     # print ("Kyber1024 (paranoid):")
     # print ("--------------------")
