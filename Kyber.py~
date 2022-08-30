@@ -55,12 +55,8 @@ if __name__ == "__main__":
     ps_light = KyberParameterSet(256, 2, 3, 3, 3329, 2**12, 2**10, 2**4, ke_ct=2)
     ps_recommended = KyberParameterSet(256, 3, 2, 2, 3329, 2**12, 2**10, 2**4)
     ps_paranoid = KyberParameterSet(256, 4, 2, 2, 3329, 2**12, 2**11, 2**5)
-    ps_alkaline41 = KyberParameterSet(4, 2, 2, 2, 41, 41 , 41, 41)
-    ps_alkaline17eta2 = KyberParameterSet(4, 2, 2, 2, 17, 17, 17, 17) # 107% failure rate!
-    ps_alkaline17eta1 = KyberParameterSet(4, 2, 1, 1, 17, 17, 17, 17)
-    ps_alkaline17comp16 = KyberParameterSet(4, 2, 1, 1, 17, 16, 16, 16)
+    ps_alkaline = KyberParameterSet(4, 2, 2, 2, 41, 41 , 41, 41)
 
-    
     # Analyses
 #    print ("Kyber512 (light):")
 #    print ("--------------------")
@@ -83,23 +79,9 @@ if __name__ == "__main__":
     # summarize(ps_paranoid)
     # print ()
 
-    print ("Alkaline41")
+    print ("Alkaline")
     print ("--------------------")
     print ("security:")
-    MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline41))
-    summarize(ps_alkaline41)
-    print ()
-
-    print ("Alkaline17comp16")
-    print ("--------------------")
-    print ("security:")
-    MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline17comp16))
-    summarize(ps_alkaline17comp16)
-    print ()
-
-    print ("Alkaline17eta1")
-    print ("--------------------")
-    print ("security:")
-    MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline17eta1))
-    summarize(ps_alkaline17eta1)
+    MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline))
+    summarize(ps_alkaline)
     print ()
