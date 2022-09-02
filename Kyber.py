@@ -56,9 +56,13 @@ if __name__ == "__main__":
     ps_recommended = KyberParameterSet(256, 3, 2, 2, 3329, 2**12, 2**10, 2**4)
     ps_paranoid = KyberParameterSet(256, 4, 2, 2, 3329, 2**12, 2**11, 2**5)
     ps_alkaline41 = KyberParameterSet(4, 2, 2, 2, 41, 41 , 41, 41)
-    ps_alkaline17eta2 = KyberParameterSet(4, 2, 2, 2, 17, 17, 17, 17) # 107% failure rate!
+    ps_alkaline41comp32 = KyberParameterSet(4, 2, 2, 2, 41, 32 , 32, 32)
+    ps_alkaline29eta2 = KyberParameterSet(4, 2, 2, 2, 29, 29 , 29, 29)
+    ps_alkaline29eta1 = KyberParameterSet(4, 2, 1, 1, 29, 29 , 29, 29)
+#    ps_alkaline17eta2 = KyberParameterSet(4, 2, 2, 2, 17, 17, 17, 17) # 107% failure rate!
     ps_alkaline17eta1 = KyberParameterSet(4, 2, 1, 1, 17, 17, 17, 17)
     ps_alkaline17comp16 = KyberParameterSet(4, 2, 1, 1, 17, 16, 16, 16)
+    ps_alkaline13 = KyberParameterSet(4, 2, 1, 1, 13, 13, 13, 13)
 
     
     # Analyses
@@ -89,6 +93,27 @@ if __name__ == "__main__":
     MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline41))
     summarize(ps_alkaline41)
     print ()
+    
+    print ("Alkaline41comp32")
+    print ("--------------------")
+    print ("security:")
+    MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline41comp32))
+    summarize(ps_alkaline41comp32)
+    print ()
+    
+    print ("Alkaline29eta1")
+    print ("--------------------")
+    print ("security:")
+    MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline29eta1))
+    summarize(ps_alkaline29eta1)
+    print ()
+    
+    print ("Alkaline29eta2")
+    print ("--------------------")
+    print ("security:")
+    MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline29eta2))
+    summarize(ps_alkaline29eta2)
+    print ()
 
     print ("Alkaline17comp16")
     print ("--------------------")
@@ -102,4 +127,12 @@ if __name__ == "__main__":
     print ("security:")
     MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline17eta1))
     summarize(ps_alkaline17eta1)
+    print ()
+
+    
+    print ("Alkaline13")
+    print ("--------------------")
+    print ("security:")
+    MLWE_summarize_attacks(Kyber_to_MLWE(ps_alkaline13))
+    summarize(ps_alkaline13)
     print ()
