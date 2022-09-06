@@ -55,6 +55,7 @@ def summarize(ps):
 if __name__ == "__main__":
     # Parameter sets
     ps_light = KyberParameterSet(256, 2, 3, 3, 3329, 2**12, 2**10, 2**4, ke_ct=2)
+    ps_Kyber512eta2 = KyberParameterSet(256, 2, 2, 2, 3329, 2**12, 2**10, 2**4)
     ps_recommended = KyberParameterSet(256, 3, 2, 2, 3329, 2**12, 2**10, 2**4)
     ps_paranoid = KyberParameterSet(256, 4, 2, 2, 3329, 2**12, 2**11, 2**5)
     ps_alkaline41 = KyberParameterSet(4, 2, 2, 2, 41, 41 , 41, 41)
@@ -72,8 +73,8 @@ if __name__ == "__main__":
     
     # Analyses
     
-#    print ("Kyber512 (light):")
-#    print ("--------------------")
+    # print ("Kyber512 (light):")
+    # print ("--------------------")
     # print ("security:")
     # MLWE_summarize_attacks(Kyber_to_MLWE(ps_light))
     # summarize(ps_light)
@@ -93,6 +94,13 @@ if __name__ == "__main__":
     # summarize(ps_paranoid)
     # print ()
 
+#     print ("Kyber512 eta2 (light):")
+#     print ("--------------------")
+#     print ("security:")
+#     MLWE_summarize_attacks(Kyber_to_MLWE(ps_Kyber512eta2))
+#     summarize(ps_Kyber512eta2)
+#     print ()
+    
     print ("Alkaline D")
     print ("--------------------")
     print ("security:")
